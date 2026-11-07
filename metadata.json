@@ -1,0 +1,6 @@
+{
+  "name": "Simulador Educativo de Microsoft Azure",
+  "description": "Simulador interactivo 100% cliente del portal de Microsoft Azure y Azure Cloud Shell (CLI) con persistencia en localStorage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

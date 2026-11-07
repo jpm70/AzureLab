@@ -1,0 +1,42 @@
+{
+  "id": "/",
+  "name": "Microsoft Azure",
+  "short_name": "Azure",
+  "description": "Simulador educativo interactivo 100% cliente de Microsoft Azure Portal y Azure Cloud Shell (CLI) con soporte 100% Offline.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "fullscreen"],
+  "orientation": "any",
+  "theme_color": "#111111",
+  "background_color": "#111111",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["education", "developer", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
