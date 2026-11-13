@@ -6,18 +6,18 @@
  * - Soporte 100% OFFLINE tras la primera carga.
  */
 
-const CACHE_NAME = 'azure-simulator-pwa-v1';
+const CACHE_NAME = 'azure-portal-lab-v2';
 
 // Recursos críticos de una sola página (App Shell) que se precachean al instalar el Service Worker
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon.svg',
-  '/pwa-192x192.png',
-  '/pwa-512x512.png',
-  '/pwa-maskable-512x512.png',
-  '/apple-touch-icon.png',
+  './',
+  './index.html',
+  './manifest.json',
+  './icon.svg',
+  './pwa-192x192.png',
+  './pwa-512x512.png',
+  './pwa-maskable-512x512.png',
+  './apple-touch-icon.png',
   'https://cdn.tailwindcss.com'
 ];
 
@@ -73,14 +73,14 @@ self.addEventListener('fetch', (event) => {
         .then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put('/index.html', responseClone));
+            caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', responseClone));
           }
           return networkResponse;
         })
         .catch(async () => {
-          const cachedIndex = await caches.match('/index.html');
+          const cachedIndex = await caches.match('./index.html');
           if (cachedIndex) return cachedIndex;
-          return caches.match('/');
+          return caches.match('./');
         })
     );
     return;
