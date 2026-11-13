@@ -1,84 +1,54 @@
-# ☁️ Simulador Educativo de Microsoft Azure (GhostAcademy Edition)
+<p align="center">
+  <a href="https://www.unfantasmaenelsistema.com"><img src="docs/logo.png" width="110" alt="Un fantasma en el sistema"></a>
+</p>
+
+<h1 align="center">AzureLab</h1>
 
 <p align="center">
-  <img src="public/icon.svg" alt="Microsoft Azure Educational Simulator Logo" width="96" height="96" />
+  <b>El portal de Azure dentro del navegador, para practicar sin suscripción ni tarjeta</b><br>
+  Portal en español con su menú, su buscador y sus hojas · Cloud Shell con <code>az</code> y <code>kubectl</code> · Redes, máquinas, almacenamiento, identidad, costos y seguridad · Laboratorios que se corrigen solos
 </p>
 
 <p align="center">
-  <strong>Entorno interactivo 100% cliente (Zero-Backend) para el aprendizaje práctico de Microsoft Azure, Cloud Shell (CLI), Redes Virtuales, Kubernetes (AKS), Ciberseguridad (WAF/CSPM), FinOps, Azure OpenAI y Gestión Multi-Inquilino (WebRTC P2P).</strong>
+  <a href="https://unfantasmaenelsistema.github.io/AzureLab/"><b>▶ Abrir en el navegador</b></a> ·
+  <a href="#servicios-que-reproduce">Servicios</a> ·
+  <a href="#comandos-de-cloud-shell">Cloud Shell</a> ·
+  <a href="#uso-en-local">Uso en local</a> ·
+  <a href="https://www.unfantasmaenelsistema.com">unfantasmaenelsistema.com</a> ·
+  <a href="LICENSE">MIT</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Vanilla_ES6_JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Vanilla JS" />
-  <img src="https://img.shields.io/badge/PWA-Offline_First-0078D4?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA Offline First" />
-  <img src="https://img.shields.io/badge/WebRTC-P2P_Lighthouse-6CCB5F?style=for-the-badge&logo=webrtc&logoColor=black" alt="WebRTC P2P" />
-  <img src="https://img.shields.io/badge/Licencia-MIT-yellow?style=for-the-badge" alt="MIT License" />
+  <img src="https://img.shields.io/badge/navegador-sin_servidor-10b981?style=flat-square" alt="Sin servidor">
+  <img src="https://img.shields.io/badge/PWA-funciona_sin_conexión-0284c7?style=flat-square" alt="PWA sin conexión">
+  <img src="https://img.shields.io/badge/portal-Azure_(ES)-0078d4?style=flat-square" alt="Portal de Azure en español">
+  <img src="https://img.shields.io/badge/licencia-MIT-blue?style=flat-square" alt="MIT">
 </p>
 
----
+<p align="center">
+  <img src="docs/capturas/02-inicio-del-portal.png" width="900" alt="Página de inicio del portal: barra superior con buscador, Cloud Shell, notificaciones, configuración, ayuda y cuenta; menú del portal con los favoritos; Servicios de Azure, recursos recientes, Navegar y Herramientas">
+</p>
 
-## 📖 Descripción General
+AzureLab reproduce el **portal de Microsoft Azure** en español para que el alumnado practique administración en la nube sin crear una suscripción: inicia sesión con Microsoft Entra ID y MFA, recorre el portal con su menú, su buscador global y sus migas de pan, crea recursos desde las hojas o desde **Cloud Shell**, y comprueba el efecto de cada cambio en redes, costos, directivas y seguridad.
 
-El **Simulador Educativo de Microsoft Azure** es una réplica hiperrealista del portal oficial de **Microsoft Azure (`portal.azure.com`)** y **Azure Cloud Shell**, diseñada específicamente para laboratorios docentes de administración cloud, arquitecturas de red, seguridad perimetral y evaluación práctica sin necesidad de tarjeta de crédito ni suscripción real en la nube.
+La interfaz no lleva marca propia a propósito: cuanto más se parezca al portal real, mejor se traslada después lo aprendido.
 
-Toda la lógica de estado (`window.azureState`), validaciones de red CIDR, motor de políticas (**Azure Policy**), control de acceso basado en roles (**RBAC**), facturación en vivo (**BillingEngine**), copias de seguridad profundas (**Recovery Services Vault**), inferencia simulada (**Azure OpenAI Studio**) y telemetría entre alumno y profesor (**Azure Lighthouse vía WebRTC**) se ejecuta **100% en el navegador** con persistencia en `localStorage` y soporte **100% Offline** mediante Service Worker (**PWA**).
+> [!NOTE]
+> Todo se ejecuta en el navegador, sin servidor ni cuentas. El entorno (recursos, registro de actividad, progreso de los laboratorios) se guarda en el `localStorage` del equipo y se puede exportar e importar como `.json` desde **Configuración**.
 
----
+> [!IMPORTANT]
+> AzureLab es un laboratorio docente independiente, sin relación con Microsoft. La pantalla de inicio de sesión es parte de la práctica y no valida nada: viene rellenada con la cuenta de laboratorio y admite cualquier contraseña, que ni se guarda ni se envía a ningún sitio. **No escribas en ella credenciales reales.**
 
-## 📸 Capturas Reales de la Aplicación
+## Capturas
 
-### 1. Puerta de Entrada: Microsoft Entra ID (`login.microsoftonline.com`) + MFA
-Réplica del flujo de autenticación corporativa en 3 pasos (Correo electrónico, Contraseña y desafío MFA de 6 dígitos / Notificación Push de Microsoft Authenticator).
+| | |
+| :---: | :---: |
+| ![Inicio de sesión con Microsoft Entra ID](docs/capturas/01-inicio-de-sesion.png) Inicio de sesión con Entra ID y MFA | ![Todos los servicios por categorías](docs/capturas/03-todos-los-servicios.png) Todos los servicios |
+| ![Lista de máquinas virtuales y conexión por Bastion](docs/capturas/04-maquinas-virtuales.png) Máquinas virtuales y Bastion | ![Cloud Shell creando un grupo de recursos](docs/capturas/05-cloud-shell.png) Cloud Shell |
+| ![Redes virtuales, subredes y NSG](docs/capturas/06-redes-virtuales.png) Redes virtuales y NSG | ![Puntuación de seguridad de Defender for Cloud](docs/capturas/07-defender-for-cloud.png) Defender for Cloud |
+| ![Administración de costos frente al presupuesto](docs/capturas/08-costos.png) Costos y presupuesto | ![Panel de laboratorios guiados](docs/capturas/10-laboratorios-guiados.png) Laboratorios guiados |
 
-![Inicio de sesión con Microsoft Entra ID](docs/screenshots/01-microsoft-entra-login.png)
-
----
-
-### 2. Panel Principal del Portal de Azure + Misiones de Azure Academy
-Vista general del portal en tema **Azure Oscuro (`#111111`)**, accesos directos a servicios, contadores dinámicos, estado de salud y el panel flotante de misiones autoevaluables con firma criptográfica **SHA-256**.
-
-![Panel Principal del Portal de Azure](docs/screenshots/02-portal-home-dashboard.png)
-
----
-
-### 3. Topología de Red Interactiva (VNet / Subredes / NSG) y Azure Cloud Shell (CLI)
- Lienzo visual de redes virtuales con validación matemática CIDR en tiempo real y terminal integrada **Azure Cloud Shell** (`Bash` / `AzureCLIParser`) ejecutando comandos `az` sincronizados bidireccionalmente con la interfaz gráfica.
-
-![Topología de Red y Azure Cloud Shell](docs/screenshots/03-networking-topology-cloudshell.png)
-
----
-
-### 4. Azure OpenAI & Portal Dedicado Azure AI Studio (Chat Playground)
-Gestión de recursos cognitivos con generación criptográfica de **API Keys (`window.crypto`)**, endpoints HTTPS dedicados, ejemplos de consumo con `curl` y **Chat Playground** interactivo con control de *System Prompt*, *Temperatura* y *Tokens máximos*.
-
-![Azure OpenAI y Azure AI Studio Playground](docs/screenshots/04-azure-ai-studio-playground.png)
-
----
-
-### 5. Almacenes de Recovery Services (Motor de Snapshots Deep Copy y Time Travel)
-Bóveda de copias de seguridad con tabla asíncrona de **Backup Jobs** (*En cola*, *En progreso*, *Completado*), clonación profunda (`structuredClone`) de máquinas virtuales y **Asistente de Restauración con Calendario** para viajar en el tiempo al estado exacto de un punto de restauración.
-
-![Almacenes de Recovery Services](docs/screenshots/05-recovery-services-vault.png)
-
----
-
-### 6. Azure Lighthouse (Gestión Multi-Inquilino P2P con WebRTC sin Backend)
-Conexión directa **Peer-to-Peer (`RTCPeerConnection` + `RTCDataChannel`)** mediante señalización manual en Base64 entre el navegador del alumno (Anfitrión) y el del profesor (Proveedor de soporte), con sincronización de estado en tiempo real y consola de ejecución remota.
-
-![Azure Lighthouse WebRTC P2P](docs/screenshots/06-azure-lighthouse-p2p.png)
-
----
-
-### 7. Administración de Costos (FinOps) e Inspector de Errores Nativos ARM (`Raw JSON`)
-Motor de facturación por ciclos con alertas de presupuesto e inspector lateral de errores de **Azure Resource Manager (`ARMError`)** con `Correlation ID (UUID v4)`, pestaña de resumen guiado y bloque **JSON sin procesar** idéntico al de Azure real.
-
-![Administración de Costos e Inspector ARMError](docs/screenshots/07-cost-management-arm-error.png)
-
----
-
-## 🚀 Características y Módulos Principales
+## Servicios que reproduce
 
 | Categoría | Servicios y Capacidades Simuladas |
 | :--- | :--- |
@@ -92,9 +62,9 @@ Motor de facturación por ciclos con alertas de presupuesto e inspector lateral 
 
 ---
 
-## 💻 Comandos Soportados en Azure Cloud Shell
+## Comandos de Cloud Shell
 
-Abre la consola integrada pulsando el icono `>_` de la barra superior y prueba cualquiera de los siguientes comandos:
+Abre la consola con el icono `>_` de la barra superior. Algunos comandos para empezar:
 
 ```bash
 # Grupos de Recursos
@@ -135,71 +105,40 @@ curl -X POST https://aoai-ghostacademy-prod.openai.azure.com/openai/deployments/
 
 ---
 
-## 🛠️ Instalación y Uso Local
+## En el aula
 
-### Requisitos previos
-- **Node.js** `>= 18.x` (o **Bun** / cualquier servidor HTTP estático).
+- **Laboratorios guiados** (Ayuda › Laboratorios guiados): tareas que se marcan solas al completarlas, con informe de actividad descargable.
+- **Rol asignado** (menú de la cuenta): alterna entre *Contributor* y *Reader* para ver qué operaciones bloquea RBAC.
+- **Azure Lighthouse** (Ayuda › Sesión remota): el profesorado se conecta por WebRTC al entorno de un alumno para ver sus cambios y darle soporte, sin servidor intermedio.
+- **Configuración**: tema oscuro, claro o de alto contraste, menú acoplado o flotante, cambio de directorio y copia de seguridad del entorno.
 
-### 1. Clonar el repositorio
+## Uso en local
+
+No hay nada que compilar: es un único `index.html` con su manifiesto y su *service worker*. Basta con servir la carpeta por HTTP.
+
 ```bash
-git clone https://github.com/tu-usuario/microsoft-azure-educational-simulator.git
-cd microsoft-azure-educational-simulator
+git clone https://github.com/unfantasmaenelsistema/AzureLab.git
 ```
 
-### 2. Instalar dependencias y arrancar el servidor de desarrollo
 ```bash
-npm install
-npm run dev
-```
-La aplicación estará disponible en `http://localhost:3000`.
-
-### 3. Compilar para producción (GitHub Pages / Vercel / Netlify)
-```bash
-npm run build
-npm run preview
+python -m http.server 8080 --directory AzureLab
 ```
 
----
+Después abre `http://localhost:8080`. La primera carga necesita conexión para descargar Tailwind desde su CDN; a partir de ahí queda en caché y funciona sin conexión.
 
-## 📁 Estructura del Proyecto
+**Cuenta de laboratorio:** `alumno@ghostacademy.com`, cualquier contraseña y el código MFA que aparece en pantalla.
+
+## Estructura
 
 ```text
 .
-├── docs/
-│   └── screenshots/                    # Capturas reales de alta resolución del simulador
-│       ├── 01-microsoft-entra-login.png
-│       ├── 02-portal-home-dashboard.png
-│       ├── 03-networking-topology-cloudshell.png
-│       ├── 04-azure-ai-studio-playground.png
-│       ├── 05-recovery-services-vault.png
-│       ├── 06-azure-lighthouse-p2p.png
-│       └── 07-cost-management-arm-error.png
-├── public/
-│   ├── icon.svg                        # Icono vectorial oficial del simulador
-│   ├── pwa-192x192.png                 # Icono PWA estándar (192x192)
-│   ├── pwa-512x512.png                 # Icono PWA de alta densidad (512x512)
-│   ├── pwa-maskable-512x512.png        # Icono PWA adaptable (Maskable)
-│   ├── apple-touch-icon.png            # Icono para dispositivos iOS/macOS
-│   ├── manifest.json                   # Web App Manifest (display: standalone, theme: #111111)
-│   └── sw.js                           # Service Worker Offline-First (Cache-First + Stale-While-Revalidate)
-├── index.html                          # Núcleo completo del simulador (UI + Motores Vanilla ES6 JS)
-├── manifest.json                       # Manifiesto PWA en raíz
-├── sw.js                               # Service Worker en raíz
-├── package.json                        # Scripts de construcción y metadatos del proyecto
-├── vite.config.ts                      # Configuración de empaquetado con Vite
-└── LICENSE                             # Licencia MIT
+├── index.html            # La aplicación completa (interfaz y motores en JavaScript)
+├── manifest.json         # Manifiesto PWA
+├── sw.js                 # Service worker (caché para uso sin conexión)
+├── icon.svg, *.png       # Iconos
+└── docs/capturas/        # Capturas del README
 ```
 
----
+## Licencia
 
-## 🔐 Credenciales de Laboratorio por Defecto
-
-- **Usuario (Correo electrónico):** `alumno@ghostacademy.com`
-- **Contraseña:** Cualquier contraseña no vacía (ej. `AzureCloud2026!`)
-- **Código MFA (6 dígitos):** Se muestra en pantalla en el simulador de *Microsoft Authenticator* o puedes pulsar **"Autocompletar código"** / **"Aprobar notificación Push"**.
-
----
-
-## 📄 Licencia
-
-Distribuido bajo la licencia **MIT**. Consulta el archivo [`LICENSE`](./LICENSE) para más detalles.
+[MIT](LICENSE). Microsoft, Azure y Microsoft Entra son marcas de Microsoft Corporation; este proyecto no está afiliado a Microsoft ni cuenta con su respaldo.
