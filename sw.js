@@ -6,7 +6,7 @@
  * - Soporte 100% OFFLINE tras la primera carga.
  */
 
-const CACHE_NAME = 'azure-portal-lab-v2';
+const CACHE_NAME = 'azure-portal-lab-v3';
 
 // Recursos críticos de una sola página (App Shell) que se precachean al instalar el Service Worker
 const PRECACHE_ASSETS = [
