@@ -112,6 +112,161 @@
         color: #0078d4;
       }
 
+      /* ==================== HOJAS DE SERVICIO: tipografía y acabados del portal ==================== */
+      /* El portal usa Segoe UI en todo salvo en editores, consolas y bloques de código */
+      #workspace-content .font-mono,
+      #workspace-content [class*='font-mono'] {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      }
+      #workspace-content :is(pre, code, textarea, kbd),
+      #workspace-content :is(pre, code, textarea) *,
+      #workspace-content :is(.bg-black, [class*='bg-[#000000]'], [class*='bg-[#0d1117]'], [class*='bg-[#090909]'], [class*='bg-[#0c0c0c]'], [class*='bg-[#0a0a0a]'], [class*='bg-[#090d11]']).font-mono,
+      #workspace-content :is(.bg-black, [class*='bg-[#000000]'], [class*='bg-[#0d1117]'], [class*='bg-[#090909]'], [class*='bg-[#0c0c0c]'], [class*='bg-[#0a0a0a]'], [class*='bg-[#090d11]']) .font-mono {
+        font-family: 'Cascadia Code', Consolas, 'Courier New', monospace;
+      }
+      /* Sin rótulos en mayúsculas ni interletrado: el portal escribe los títulos en minúscula */
+      #workspace-content .uppercase {
+        text-transform: none;
+        letter-spacing: normal;
+      }
+      #workspace-content [class*='tracking-wide'] {
+        letter-spacing: normal;
+      }
+      /* Cabecera de hoja */
+      #workspace-content h1 {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+      #workspace-content .az-blade-sub {
+        font-size: 12px;
+        line-height: 16px;
+        color: #a19f9d;
+      }
+      #workspace-content .az-hidden-chip {
+        display: none !important;
+      }
+      /* Accesos a la CLI: botón neutro de barra de comandos, sin colores de laboratorio */
+      #workspace-content [data-insert-cmd] {
+        background: transparent !important;
+        border: 1px solid #3b3a39 !important;
+        color: #d2d0ce !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+        border-radius: 2px;
+      }
+      #workspace-content [data-insert-cmd]:hover {
+        background: #323130 !important;
+        color: #ffffff !important;
+      }
+      /* Tablas: cabecera y filas como las listas del portal */
+      #workspace-content table {
+        font-size: 13px;
+      }
+      #workspace-content thead th {
+        font-weight: 600;
+        color: #d2d0ce;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      #workspace-content tbody td {
+        font-weight: 400;
+      }
+      /* En celdas y etiquetas, el cian y el amarillo de énfasis pasan a texto normal; los enlaces conservan su azul */
+      #workspace-content td.text-\[\#50e6ff\],
+      #workspace-content td.text-\[\#fce100\]:not(.az-status),
+      #workspace-content td > span.text-\[\#50e6ff\]:not([class*='border']),
+      #workspace-content td > .font-bold {
+        color: #f3f2f1;
+        font-weight: 400;
+      }
+      #workspace-content td[class*='text-[11px]'],
+      #workspace-content td > span[class*='text-[11px]']:not([class*='border']),
+      #workspace-content td[class*='text-[12px]'] {
+        font-size: 13px;
+      }
+      #workspace-content select {
+        color: #ffffff;
+      }
+      /* Botones y campos con el radio de 2 px del portal */
+      #workspace-content :is(button, input, select, textarea) {
+        border-radius: 2px;
+      }
+      #workspace-content .az-cmdbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px;
+        padding: 4px 0;
+        border-bottom: 1px solid #3b3a39;
+        font-size: 13px;
+      }
+      #workspace-content .az-cmdbar button {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 32px;
+        padding: 0 10px;
+        color: #f3f2f1;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      #workspace-content .az-cmdbar button:hover {
+        background: #323130;
+      }
+      #workspace-content .az-cmdbar button svg {
+        width: 16px;
+        height: 16px;
+        color: #2899f5;
+        flex-shrink: 0;
+      }
+      #workspace-content .az-cmdbar .az-sep {
+        width: 1px;
+        height: 20px;
+        background: #3b3a39;
+        margin: 0 4px;
+      }
+      #workspace-content .az-pill {
+        display: inline-flex;
+        align-items: center;
+        height: 24px;
+        padding: 0 10px;
+        border: 1px solid #605e5c;
+        border-radius: 12px;
+        font-size: 12px;
+        color: #f3f2f1;
+        white-space: nowrap;
+      }
+      #workspace-content .az-pill b {
+        font-weight: 600;
+        margin-left: 4px;
+      }
+      #workspace-content .az-list th,
+      #workspace-content .az-list td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #3b3a39;
+        text-align: left;
+        white-space: nowrap;
+      }
+      #workspace-content .az-list tbody tr:hover {
+        background: #252423;
+      }
+      #workspace-content .az-list a,
+      #workspace-content .az-list .az-link {
+        color: #2899f5;
+        cursor: pointer;
+      }
+      #workspace-content .az-list .az-link:hover {
+        text-decoration: underline;
+      }
+      #workspace-content .az-status-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 6px;
+      }
+
       /* ==================== ESTILOS RÉPLICA LOGIN.MICROSOFTONLINE.COM ==================== */
       .ms-login-bg {
         background-color: #f2f2f2;
@@ -5420,6 +5575,46 @@ return {
         };
 
         // Vista 1: Inicio (Portal Home)
+        // Nombre para mostrar de cada región, como en el portal
+        const AZ_REGION_NAMES = {
+          westeurope: 'West Europe', northeurope: 'North Europe', eastus: 'East US', eastus2: 'East US 2',
+          westus: 'West US', westus2: 'West US 2', westus3: 'West US 3', centralus: 'Central US',
+          southcentralus: 'South Central US', northcentralus: 'North Central US', uksouth: 'UK South', ukwest: 'UK West',
+          francecentral: 'France Central', germanywestcentral: 'Germany West Central', spaincentral: 'Spain Central',
+          italynorth: 'Italy North', swedencentral: 'Sweden Central', switzerlandnorth: 'Switzerland North',
+          norwayeast: 'Norway East', polandcentral: 'Poland Central', brazilsouth: 'Brazil South',
+          canadacentral: 'Canada Central', japaneast: 'Japan East', southeastasia: 'Southeast Asia',
+          eastasia: 'East Asia', australiaeast: 'Australia East', centralindia: 'Central India',
+          southafricanorth: 'South Africa North', uaenorth: 'UAE North', global: 'Global'
+        };
+        const azRegionName = (loc) => AZ_REGION_NAMES[String(loc || '').toLowerCase()] || String(loc || '');
+        window.AZ_REGION_NAMES = AZ_REGION_NAMES;
+
+        // Tipo de recurso tal como lo nombra el portal en español
+        const AZ_TYPE_NAMES = {
+          'Red virtual (VNet)': 'Red virtual',
+          'Grupo de seguridad de red (NSG)': 'Grupo de seguridad de red',
+          'App Service (Web App)': 'App Service',
+          'Key Vault (Bóveda de claves)': 'Almacén de claves',
+          'Container Instance (ACI)': 'Instancias de contenedor',
+          'Clúster Kubernetes (AKS)': 'Servicio de Kubernetes',
+          'Equilibrador de carga (Load Balancer L4)': 'Equilibrador de carga',
+          'Application Gateway + WAF (Capa 7)': 'Puerta de enlace de aplicaciones'
+        };
+        const azTypeName = (t) => AZ_TYPE_NAMES[t] || String(t || '').replace(/\s*\(\s*(Sistema|Instancia Regional)\s*\)/i, '');
+
+        // Iconos de la barra de comandos de las hojas
+        const AZ_CMD_ICONS = {
+          add: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M8 2.5v11M2.5 8h11"/></svg>',
+          refresh: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8a5 5 0 1 1-1.5-3.6"/><path d="M13.2 2.2v2.6h-2.6"/></svg>',
+          download: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.8 7.2 8 10.4l3.2-3.2M2.5 13.5h11"/></svg>',
+          trash: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.5 8.5h6l.5-8.5M6.8 7v4M9.2 7v4"/></svg>',
+          play: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M5 3.5v9l7-4.5-7-4.5z"/></svg>',
+          shell: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="2.5" width="13" height="11" rx="1"/><path d="M4.5 6l2.2 2-2.2 2M8.5 10.5h3"/></svg>'
+        };
+        const azCmdButton = (icon, label, attrs) => `<button type="button" ${attrs}>${AZ_CMD_ICONS[icon] || ''}<span>${label}</span></button>`;
+        const AZ_CMD_SEP = '<span class="az-sep"></span>';
+
         // Icono de un servicio: se reutiliza el SVG del menú del portal para que sea el mismo en todas partes
         const azServiceIcon = (view, cls = 'w-8 h-8') => {
           const src = document.querySelector(`#left-sidebar [data-view="${view}"] svg`);
@@ -5577,7 +5772,7 @@ return {
                             <button ${linkAttrs(row)} class="text-[#2899f5] hover:underline cursor-pointer truncate">${escapeHtml(row.name)}</button>
                           </span>
                         </td>
-                        <td class="py-2 px-4 text-[#f3f2f1]">${escapeHtml(row.type)}</td>
+                        <td class="py-2 px-4 text-[#f3f2f1]">${escapeHtml(azTypeName(row.type))}</td>
                         <td class="py-2 pl-4 text-[#f3f2f1]">${formatRelativeTime(row.ts)}</td>
                       </tr>`
                             )
@@ -5689,74 +5884,70 @@ return {
 
           return `
             <div class="space-y-4 pb-8">
-              <!-- Encabezado del Blade -->
-              <div class="flex items-center justify-between border-b border-[#3b3a39] pb-3">
-                <div class="flex items-center gap-3">
-                  <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
-                    <path d="M9 2L15.5 5.75V12.25L9 16L2.5 12.25V5.75L9 2Z" stroke="#50e6ff" stroke-width="1.3" fill="#0078d4" fill-opacity="0.25"/>
-                    <path d="M9 5.5L12.5 7.5V11.5L9 13.5L5.5 11.5V7.5L9 5.5Z" fill="#50e6ff"/>
-                  </svg>
-                  <div>
-                    <h1 class="text-[20px] font-semibold text-white leading-tight">Grupos de recursos</h1>
-                    <p class="text-[11px] text-[#a19f9d]">Contenedores lógicos en los que se implementan y administran los recursos de Azure</p>
-                  </div>
+              ${selectedRGDetailName ? '' : `
+              <!-- Encabezado de la hoja -->
+              <div class="flex items-center gap-3">
+                <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
+                  <path d="M9 2L15.5 5.75V12.25L9 16L2.5 12.25V5.75L9 2Z" stroke="#50e6ff" stroke-width="1.3" fill="#0078d4" fill-opacity="0.25"/>
+                  <path d="M9 5.5L12.5 7.5V11.5L9 13.5L5.5 11.5V7.5L9 5.5Z" fill="#50e6ff"/>
+                </svg>
+                <div>
+                  <h1 class="text-[20px] font-semibold text-white leading-tight">Grupos de recursos</h1>
+                  <p class="text-[11px] text-[#a19f9d]">Directorio</p>
                 </div>
               </div>
 
-              <!-- Barra de Comandos (Command Bar) -->
-              <div class="bg-[#252423] border border-[#3b3a39] px-3 py-1.5 flex flex-wrap items-center gap-2 text-[12px]">
-                <button data-action="open-create-rg" class="px-2.5 py-1 hover:bg-[#323130] text-white flex items-center gap-1.5 cursor-pointer">
-                  <span class="text-[#50e6ff] font-bold text-sm leading-none">+</span>
-                  <span>Crear</span>
-                </button>
-                <span class="text-[#3b3a39]">|</span>
-                <button data-action="refresh-view" class="px-2.5 py-1 hover:bg-[#323130] text-[#f3f2f1] flex items-center gap-1.5 cursor-pointer">
-                  <span>Actualizar</span>
-                </button>
+              <!-- Barra de comandos -->
+              <div class="az-cmdbar">
+                ${azCmdButton('add', 'Crear', 'data-action="open-create-rg"')}
+                ${AZ_CMD_SEP}
+                ${azCmdButton('refresh', 'Actualizar', 'data-action="refresh-view"')}
+                ${azCmdButton('download', 'Exportar a CSV', 'data-az-export-csv="grupos-de-recursos"')}
               </div>
 
-              <!-- Barra de Filtros -->
-              <div class="flex flex-wrap items-center gap-3">
+              <!-- Filtros -->
+              <div class="flex flex-wrap items-center gap-2">
                 <input
                   id="rg-filter-input"
                   type="text"
                   value="${escapeHtml(filterTextRG)}"
-                  placeholder="Filtrar por nombre o región..."
-                  class="w-72 h-7 bg-[#252423] text-[12px] text-white placeholder-[#a19f9d] px-3 border border-[#3b3a39] focus:border-[#0078d4] focus:outline-none select-text"
+                  placeholder="Filtrar por cualquier campo..."
+                  class="w-64 h-7 bg-[#1b1a19] text-[13px] text-white placeholder-[#a19f9d] px-2.5 border border-[#605e5c] focus:border-[#0078d4] focus:outline-none select-text"
                 />
-                <select
-                  id="rg-location-select"
-                  class="h-7 bg-[#252423] text-[12px] text-white px-2.5 border border-[#3b3a39] focus:border-[#0078d4] focus:outline-none"
-                >
-                  <option value="all" ${filterLocationRG === 'all' ? 'selected' : ''}>Ubicación: Todas</option>
-                  ${uniqueLocations
-                    .map(
-                      (loc) => `<option value="${escapeHtml(loc)}" ${filterLocationRG === loc ? 'selected' : ''}>${escapeHtml(loc)}</option>`
-                    )
-                    .join('')}
-                </select>
-                <span class="text-[12px] text-[#a19f9d] tabular-nums">Mostrando ${rgs.length} de ${window.azureState.resourceGroups.length} grupos</span>
+                <span class="az-pill">Suscripción es igual a <b>todo</b></span>
+                <label class="az-pill gap-1">
+                  <span>Ubicación es igual a</span>
+                  <select id="rg-location-select" class="bg-transparent text-[12px] font-semibold text-white focus:outline-none cursor-pointer">
+                    <option value="all" class="bg-[#252423]" ${filterLocationRG === 'all' ? 'selected' : ''}>todo</option>
+                    ${uniqueLocations
+                      .map(
+                        (loc) => `<option class="bg-[#252423]" value="${escapeHtml(loc)}" ${filterLocationRG === loc ? 'selected' : ''}>${escapeHtml(azRegionName(loc))}</option>`
+                      )
+                      .join('')}
+                  </select>
+                </label>
+              </div>
+              <div class="text-[12px] text-[#d2d0ce] tabular-nums">
+                ${rgs.length === 0 ? 'No hay registros que mostrar.' : `Mostrando 1 a ${rgs.length} de ${rgs.length} registros.`}
               </div>
 
-              <!-- Tabla de Grupos de Recursos -->
-              <div class="bg-[#252423] border border-[#3b3a39] overflow-x-auto">
-                <table class="w-full text-left border-collapse text-[12px] tabular-nums">
+              <!-- Lista de grupos de recursos -->
+              <div class="overflow-x-auto">
+                <table class="az-list w-full border-collapse">
                   <thead>
-                    <tr class="border-b border-[#3b3a39] text-[#a19f9d] font-semibold bg-[#1b1a19]">
-                      <th class="py-2.5 px-4">Nombre</th>
-                      <th class="py-2.5 px-4">Suscripción</th>
-                      <th class="py-2.5 px-4">Ubicación</th>
-                      <th class="py-2.5 px-4">Estado de aprovisionamiento</th>
-                      <th class="py-2.5 px-4">ID de Recurso (ARM)</th>
-                      <th class="py-2.5 px-4 text-right">Acciones</th>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Suscripción</th>
+                      <th>Ubicación</th>
+                      <th class="w-10"></th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-[#3b3a39]">
+                  <tbody>
                     ${
                       rgs.length === 0
                         ? `<tr>
-                            <td colspan="6" class="py-8 px-4 text-center text-[#a19f9d]">
-                              No se encontraron grupos de recursos que coincidan con el filtro. Ejecuta <code class="text-[#fce100] font-mono">az group create -n test -l westeurope</code> en Cloud Shell.
+                            <td colspan="4" class="!py-10 text-center text-[#a19f9d]">
+                              No hay grupos de recursos que mostrar. Pruebe a cambiar o borrar los filtros.
                             </td>
                           </tr>`
                         : rgs
@@ -5768,34 +5959,27 @@ return {
                           data-resource-name="${escapeHtml(g.name)}"
                           data-resource-rg="${escapeHtml(g.name)}"
                           data-resource-status="Succeeded"
-                          class="${selectedRGDetailName === g.name ? 'bg-[#0078d4]/15' : 'hover:bg-[#2d2c2b]'} transition-colors cursor-context-menu"
+                          class="${selectedRGDetailName === g.name ? 'bg-[#0078d4]/15' : ''} cursor-context-menu"
                         >
-                          <td class="py-2.5 px-4 font-semibold text-[#2899f5]">
-                            <button type="button" data-drill-rg="${escapeHtml(g.name)}" class="inline-flex items-center gap-2 hover:underline cursor-pointer text-left">
-                              <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 18 18" fill="none">
-                                <path d="M9 2L15.5 5.75V12.25L9 16L2.5 12.25V5.75L9 2Z" stroke="#50e6ff" stroke-width="1.4"/>
+                          <td>
+                            <button type="button" data-drill-rg="${escapeHtml(g.name)}" class="az-link inline-flex items-center gap-2 text-left">
+                              <svg class="w-4 h-4 shrink-0" viewBox="0 0 18 18" fill="none">
+                                <path d="M9 2L15.5 5.75V12.25L9 16L2.5 12.25V5.75L9 2Z" stroke="#50e6ff" stroke-width="1.3" fill="#0078d4" fill-opacity="0.25"/>
+                                <path d="M9 5.5L12.5 7.5V11.5L9 13.5L5.5 11.5V7.5L9 5.5Z" fill="#50e6ff"/>
                               </svg>
                               <span>${escapeHtml(g.name)}</span>
                             </button>
                           </td>
-                          <td class="py-2.5 px-4 text-[#f3f2f1]">${escapeHtml(window.azureState.subscription.name)}</td>
-                          <td class="py-2.5 px-4 font-mono text-[#50e6ff]">${escapeHtml(g.location)}</td>
-                          <td class="py-2.5 px-4 text-[#6ccb5f] font-medium">${escapeHtml(g.properties?.provisioningState || 'Succeeded')}</td>
-                          <td class="py-2.5 px-4 font-mono text-[11px] text-[#a19f9d] truncate max-w-xs" title="${escapeHtml(g.id)}">${escapeHtml(g.id)}</td>
-                          <td class="py-2.5 px-4 text-right space-x-2">
+                          <td><span class="az-link" data-nav="cost-management">${escapeHtml(window.azureState.subscription.name)}</span></td>
+                          <td>${escapeHtml(azRegionName(g.location))}</td>
+                          <td class="text-right">
                             <button
                               type="button"
-                              data-drill-rg="${escapeHtml(g.name)}"
-                              class="text-[#50e6ff] hover:underline text-[11px] cursor-pointer"
-                            >
-                              Ver recursos
-                            </button>
-                            <button
                               data-delete-rg="${escapeHtml(g.name)}"
-                              class="text-[#f1707b] hover:underline text-[11px] cursor-pointer"
-                            >
-                              Eliminar
-                            </button>
+                              title="Eliminar grupo de recursos"
+                              aria-label="Eliminar grupo de recursos ${escapeHtml(g.name)}"
+                              class="inline-flex w-6 h-6 items-center justify-center text-[#d2d0ce] hover:text-[#f1707b] hover:bg-[#323130] cursor-pointer [&>svg]:w-4 [&>svg]:h-4"
+                            >${AZ_CMD_ICONS.trash}</button>
                           </td>
                         </tr>
                       `
@@ -5805,6 +5989,8 @@ return {
                   </tbody>
                 </table>
               </div>
+
+              `}
 
               ${
                 selectedRGDetailName
@@ -5816,44 +6002,69 @@ return {
                         (r) => (r.resourceGroup || '').toLowerCase() === selectedRGDetailName.toLowerCase()
                       );
                       return `
-                <!-- Blade de Nivel Profundo: Recursos dentro de ${escapeHtml(selectedRGDetailName)} -->
-                <div class="bg-[#252423] border-2 border-[#0078d4] p-4 space-y-3">
-                  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#3b3a39] pb-2.5">
-                    <div>
-                      <div class="text-[11px] text-[#50e6ff] font-mono uppercase">Inspección de Grupo de Recursos (Nivel 3 de Breadcrumb)</div>
-                      <h2 class="text-[16px] font-semibold text-white">
-                        Recursos contenidos en <span class="text-[#50e6ff] font-mono">${escapeHtml(selectedRGDetailName)}</span> (${rgResources.length})
-                      </h2>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      ${
-                        rgVms.length > 0
-                          ? `<button type="button" data-drill-vm="${escapeHtml(rgVms[0].name)}" data-drill-vm-rg="${escapeHtml(selectedRGDetailName)}" class="px-3 py-1 bg-[#0078d4] hover:bg-[#106ebe] text-white text-[12px] font-semibold cursor-pointer">
-                               Entrar a VM: ${escapeHtml(rgVms[0].name)} &rarr;
-                             </button>`
-                          : ''
-                      }
-                      <button type="button" data-breadcrumb-idx="1" class="px-3 py-1 bg-[#1b1a19] hover:bg-[#323130] border border-[#3b3a39] text-[#d2d0ce] text-[12px] cursor-pointer">
-                        Cerrar detalle
-                      </button>
-                    </div>
+                <!-- Hoja del grupo de recursos -->
+                <div class="flex items-center gap-3">
+                  <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
+                    <path d="M9 2L15.5 5.75V12.25L9 16L2.5 12.25V5.75L9 2Z" stroke="#50e6ff" stroke-width="1.3" fill="#0078d4" fill-opacity="0.25"/>
+                    <path d="M9 5.5L12.5 7.5V11.5L9 13.5L5.5 11.5V7.5L9 5.5Z" fill="#50e6ff"/>
+                  </svg>
+                  <div>
+                    <h1 class="text-[20px] font-semibold text-white leading-tight">${escapeHtml(selectedRGDetailName)}</h1>
+                    <p class="az-blade-sub">Grupo de recursos</p>
                   </div>
+                </div>
 
+                <div class="az-cmdbar">
+                  ${azCmdButton('add', 'Crear', 'data-nav="create-resource-marketplace"')}
+                  ${AZ_CMD_SEP}
+                  ${azCmdButton('refresh', 'Actualizar', 'data-action="refresh-view"')}
+                  ${azCmdButton('download', 'Exportar a CSV', `data-az-export-csv="${escapeHtml(selectedRGDetailName)}"`)}
+                  ${AZ_CMD_SEP}
+                  ${azCmdButton('trash', 'Eliminar grupo de recursos', `data-delete-rg="${escapeHtml(selectedRGDetailName)}"`)}
+                </div>
+
+                ${(() => {
+                  const rgObj = (window.azureState.resourceGroups || []).find((g) => g.name.toLowerCase() === selectedRGDetailName.toLowerCase()) || {};
+                  const tagEntries = Object.entries(rgObj.tags || {}).filter(([k]) => k !== 'hidden-title');
+                  return `
+                <section>
+                  <div class="text-[13px] font-semibold text-white pb-1.5 mb-2 border-b border-[#3b3a39]">Información esencial</div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-1.5 text-[13px]">
+                    <div class="flex gap-2"><span class="w-44 shrink-0 text-[#a19f9d]">Suscripción</span><span class="az-link text-[#2899f5] hover:underline cursor-pointer" data-nav="cost-management">${escapeHtml(window.azureState.subscription.name)}</span></div>
+                    <div class="flex gap-2"><span class="w-44 shrink-0 text-[#a19f9d]">Implementaciones</span><span class="text-[#2899f5] hover:underline cursor-pointer" data-nav="activity-log">${rgResources.length} correctas</span></div>
+                    <div class="flex gap-2"><span class="w-44 shrink-0 text-[#a19f9d]">Id. de suscripción</span><span class="text-[#f3f2f1] select-text">${escapeHtml(window.azureState.subscription.id || '')}</span></div>
+                    <div class="flex gap-2"><span class="w-44 shrink-0 text-[#a19f9d]">Ubicación</span><span class="text-[#f3f2f1]">${escapeHtml(azRegionName(rgObj.location))}</span></div>
+                    <div class="flex gap-2 md:col-span-2"><span class="w-44 shrink-0 text-[#a19f9d]">Etiquetas</span><span class="text-[#f3f2f1]">${
+                      tagEntries.length
+                        ? tagEntries.map(([k, v]) => `<span class="inline-block px-1.5 py-px mr-1 text-[12px] bg-[#323130] rounded-sm">${escapeHtml(k)} : ${escapeHtml(String(v))}</span>`).join('')
+                        : 'Ninguna'
+                    }</span></div>
+                  </div>
+                </section>`;
+                })()}
+
+                <section class="space-y-2">
+                  <div class="flex items-center gap-6 border-b border-[#3b3a39] text-[13px]">
+                    <span class="py-2 text-white font-semibold border-b-2 border-[#2899f5] -mb-px">Recursos</span>
+                  </div>
+                  <div class="text-[12px] text-[#d2d0ce] tabular-nums">
+                    ${rgResources.length === 0 ? 'No hay recursos que mostrar.' : `Mostrando 1 a ${rgResources.length} de ${rgResources.length} registros.`}
+                  </div>
                   <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-[12px]">
+                    <table class="az-list w-full border-collapse">
                       <thead>
-                        <tr class="border-b border-[#3b3a39] text-[#a19f9d] bg-[#1b1a19]">
-                          <th class="py-2 px-3">Nombre del recurso</th>
-                          <th class="py-2 px-3">Tipo</th>
-                          <th class="py-2 px-3">Ubicación</th>
-                          <th class="py-2 px-3">Estado / Detalle</th>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Tipo</th>
+                          <th>Ubicación</th>
                         </tr>
                       </thead>
-                      <tbody class="divide-y divide-[#3b3a39]">
+                      <tbody>
                         ${
-                          rgResources.length === 0
-                            ? `<tr><td colspan="4" class="py-5 px-3 text-center text-[#a19f9d]">Este grupo de recursos aún no contiene recursos hijos.</td></tr>`
+                          rgResources.filter((r) => r.navTarget !== 'resource-groups').length === 0
+                            ? `<tr><td colspan="3" class="!py-10 text-center text-[#a19f9d]">No hay recursos que mostrar en este grupo de recursos.</td></tr>`
                             : rgResources
+                                .filter((r) => r.navTarget !== 'resource-groups')
                                 .map((item) => {
                                   const isVmItem = item.navTarget === 'virtual-machines';
                                   return `
@@ -5863,18 +6074,20 @@ return {
                               data-resource-name="${escapeHtml(item.name)}"
                               data-resource-rg="${escapeHtml(item.resourceGroup)}"
                               data-resource-nav="${escapeHtml(item.navTarget)}"
-                              class="hover:bg-[#2d2c2b] transition-colors cursor-context-menu"
+                              class="cursor-context-menu"
                             >
-                              <td class="py-2 px-3 font-semibold text-[#2899f5] hover:underline cursor-pointer" ${
-                                isVmItem
-                                  ? `data-drill-vm="${escapeHtml(item.name)}" data-drill-vm-rg="${escapeHtml(selectedRGDetailName)}"`
-                                  : `data-nav="${escapeHtml(item.navTarget)}"`
-                              }>
-                                ${escapeHtml(item.name)}
+                              <td>
+                                <button type="button" class="az-link inline-flex items-center gap-2 text-left" ${
+                                  isVmItem
+                                    ? `data-drill-vm="${escapeHtml(item.name)}" data-drill-vm-rg="${escapeHtml(selectedRGDetailName)}"`
+                                    : `data-nav="${escapeHtml(item.navTarget)}" data-recent-name="${escapeHtml(item.name)}" data-recent-rg="${escapeHtml(item.resourceGroup)}"`
+                                }>
+                                  ${azServiceIcon(item.navTarget, 'w-4 h-4')}
+                                  <span>${escapeHtml(item.name)}</span>
+                                </button>
                               </td>
-                              <td class="py-2 px-3 text-[#f3f2f1]">${escapeHtml(item.type)}</td>
-                              <td class="py-2 px-3 font-mono text-[#50e6ff]">${escapeHtml(item.location)}</td>
-                              <td class="py-2 px-3 text-[#6ccb5f]">${escapeHtml(item.status)}</td>
+                              <td>${escapeHtml(azTypeName(item.type))}</td>
+                              <td>${escapeHtml(azRegionName(item.location))}</td>
                             </tr>
                           `;
                                 })
@@ -5883,7 +6096,7 @@ return {
                       </tbody>
                     </table>
                   </div>
-                </div>
+                </section>
               `;
                     })()
                   : ''
@@ -6691,85 +6904,67 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
 
           return `
             <div class="space-y-5 pb-8">
-              <!-- Encabezado del Blade -->
-              <div class="flex items-center justify-between border-b border-[#3b3a39] pb-3">
-                <div class="flex items-center gap-3">
-                  <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
-                    <rect x="2" y="3" width="14" height="9.5" rx="1" fill="#0078d4"/>
-                    <rect x="3.2" y="4.2" width="11.6" height="7.1" fill="#50e6ff"/>
-                    <path d="M6.5 15H11.5M9 12.5V15" stroke="#a19f9d" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div>
-                    <h1 class="text-[20px] font-semibold text-white leading-tight">Máquinas virtuales</h1>
-                    <p class="text-[11px] text-[#a19f9d]">Instancias de proceso a petición con Linux o Windows</p>
-                  </div>
+              <!-- Encabezado de la hoja -->
+              <div class="flex items-center gap-3">
+                <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
+                  <rect x="2" y="3" width="14" height="9.5" rx="1" fill="#0078d4"/>
+                  <rect x="3.2" y="4.2" width="11.6" height="7.1" fill="#50e6ff"/>
+                  <path d="M6.5 15H11.5M9 12.5V15" stroke="#a19f9d" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <div>
+                  <h1 class="text-[20px] font-semibold text-white leading-tight">Máquinas virtuales</h1>
+                  <p class="text-[11px] text-[#a19f9d]">Directorio</p>
                 </div>
               </div>
 
-              <!-- Barra de Comandos -->
-              <div class="bg-[#252423] border border-[#3b3a39] px-3 py-1.5 flex flex-wrap items-center gap-2 text-[12px]">
-                <button data-action="open-create-vm" class="px-2.5 py-1 hover:bg-[#323130] text-white flex items-center gap-1.5 cursor-pointer">
-                  <span class="text-[#50e6ff] font-bold text-sm leading-none">+</span>
-                  <span>Crear máquina virtual</span>
-                </button>
-                <span class="text-[#3b3a39]">|</span>
-                <button data-action="refresh-view" class="px-2.5 py-1 hover:bg-[#323130] text-[#f3f2f1] cursor-pointer">
-                  Actualizar
-                </button>
-                <span class="text-[#3b3a39]">|</span>
-                <button
-                  data-insert-cmd="az network vnet subnet create -g rg-core-infra --vnet-name vnet-core-hub -n AzureBastionSubnet --address-prefixes 10.0.250.0/26"
-                  class="px-2.5 py-1 hover:bg-[#323130] text-[#50e6ff] font-mono cursor-pointer"
-                >
-                  CLI: Crear subred AzureBastionSubnet (/26)
-                </button>
-                <span class="text-[#3b3a39]">|</span>
-                <button
-                  data-insert-cmd="az network bastion create -n bst-core-hub -g rg-core-infra --vnet-name vnet-core-hub --sku Standard"
-                  class="px-2.5 py-1 hover:bg-[#323130] text-[#fce100] font-mono cursor-pointer"
-                >
-                  CLI: az network bastion create
-                </button>
+              <!-- Barra de comandos -->
+              <div class="az-cmdbar">
+                ${azCmdButton('add', 'Crear', 'data-action="open-create-vm"')}
+                ${AZ_CMD_SEP}
+                ${azCmdButton('refresh', 'Actualizar', 'data-action="refresh-view"')}
+                ${azCmdButton('download', 'Exportar a CSV', 'data-az-export-csv="maquinas-virtuales"')}
               </div>
 
-              <!-- Filtro -->
-              <div class="flex items-center gap-3">
+              <!-- Filtros -->
+              <div class="flex flex-wrap items-center gap-2">
                 <input
                   id="vm-filter-input"
                   type="text"
                   value="${escapeHtml(filterTextVM)}"
-                  placeholder="Filtrar máquinas virtuales por nombre, grupo o región..."
-                  class="w-80 h-7 bg-[#252423] text-[12px] text-white placeholder-[#a19f9d] px-3 border border-[#3b3a39] focus:border-[#0078d4] focus:outline-none select-text"
+                  placeholder="Filtrar por cualquier campo..."
+                  class="w-64 h-7 bg-[#1b1a19] text-[13px] text-white placeholder-[#a19f9d] px-2.5 border border-[#605e5c] focus:border-[#0078d4] focus:outline-none select-text"
                 />
-                <span class="text-[12px] text-[#a19f9d] tabular-nums">Mostrando ${vms.length} de ${allVms.length} máquinas virtuales</span>
+                <span class="az-pill">Suscripción es igual a <b>todo</b></span>
+                <span class="az-pill">Grupo de recursos es igual a <b>todo</b></span>
+                <span class="az-pill">Ubicación es igual a <b>todo</b></span>
+              </div>
+              <div class="text-[12px] text-[#d2d0ce] tabular-nums">
+                ${vms.length === 0 ? 'No hay registros que mostrar.' : `Mostrando 1 a ${vms.length} de ${vms.length} registros.`}
               </div>
 
-              <!-- Tabla Tailwind de Máquinas Virtuales (Envuelta en overflow-x-auto para pantallas pequeñas) -->
-              <div class="w-full max-w-full bg-[#252423] border border-[#3b3a39] overflow-x-auto overscroll-x-contain">
-                <table class="w-full min-w-[960px] text-left border-collapse text-[12px] tabular-nums whitespace-nowrap">
+              <!-- Lista de máquinas virtuales -->
+              <div class="w-full max-w-full overflow-x-auto overscroll-x-contain">
+                <table class="az-list w-full min-w-[960px] border-collapse tabular-nums">
                   <thead>
-                    <tr class="border-b border-[#3b3a39] text-[#a19f9d] font-semibold bg-[#1b1a19]">
-                      <th class="py-2.5 px-4">Nombre</th>
-                      <th class="py-2.5 px-4">Estado</th>
-                      <th class="py-2.5 px-4">Grupo de recursos</th>
-                      <th class="py-2.5 px-4">Red Virtual / Subred</th>
-                      <th class="py-2.5 px-4">Firewall (NSG)</th>
-                      <th class="py-2.5 px-4">Imagen</th>
-                      <th class="py-2.5 px-4">IP Privada / Pública</th>
-                      <th class="py-2.5 px-4">Usuario SSH</th>
-                      <th class="py-2.5 px-4 text-right">Acciones</th>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Grupo de recursos</th>
+                      <th>Ubicación</th>
+                      <th>Estado</th>
+                      <th>Sistema operativo</th>
+                      <th>Tamaño</th>
+                      <th>Dirección IP pública</th>
+                      <th>Red virtual/subred</th>
+                      <th></th>
                     </tr>
                   </thead>
-                  <tbody id="vm-table-body" class="divide-y divide-[#3b3a39]">
+                  <tbody id="vm-table-body">
                     ${
                       vms.length === 0
                         ? `<tr>
-                            <td colspan="9" class="py-10 px-4 text-center text-[#a19f9d]">
-                              <div class="text-[13px] text-white font-semibold mb-1">No hay máquinas virtuales para mostrar</div>
-                              <div class="text-[12px] text-[#a19f9d]">
-                                Ejecuta en Cloud Shell:
-                                <code class="text-[#fce100] font-mono bg-[#111111] px-1.5 py-0.5 border border-[#3b3a39]">az vm create -n vm-web -g rg-core-infra --image Ubuntu2204 --admin-username azureuser --vnet-name vnet-core-hub --subnet snet-frontend --nsg nsg-core-firewall</code>
-                              </div>
+                            <td colspan="9" class="!py-10 text-center text-[#a19f9d]">
+                              <div class="text-[14px] text-white font-semibold mb-1">No hay máquinas virtuales que mostrar</div>
+                              <div class="text-[13px]">Cree una máquina virtual con Linux o Windows desde <button data-action="open-create-vm" class="az-link hover:underline">Crear</button> o con <code class="font-mono">az vm create</code> en Cloud Shell.</div>
                             </td>
                           </tr>`
                         : vms
@@ -6778,13 +6973,11 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
                                 vm.status === 'Corriendo' ||
                                 vm.powerState === 'Running' ||
                                 String(vm.status).includes('ejecución');
-                              const displayStatus = isRunning ? 'Corriendo (Running)' : 'Detenida';
                               const publicIp = vm.publicIpAddress || vm.publicIp || '-';
-                              const privateIp = vm.privateIpAddress || vm.privateIp || '10.0.1.4';
                               const image = vm.image || vm.os || 'Ubuntu2204';
+                              const osLabel = /win/i.test(image) ? 'Windows' : 'Linux';
                               const vnetLabel = vm.vnetName || vm.virtualNetwork || 'vnet-core-hub';
                               const subnetLabel = vm.subnetName || vm.subnet || 'snet-frontend';
-                              const nsgLabel = vm.nsgName || vm.networkSecurityGroup || 'nsg-core-firewall';
                               const isSelectedForConnect = targetVm && targetVm.name === vm.name;
 
                                return `
@@ -6794,39 +6987,31 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
                           data-resource-name="${escapeHtml(vm.name)}"
                           data-resource-rg="${escapeHtml(vm.resourceGroup)}"
                           data-resource-status="${isRunning ? 'Running' : 'Stopped'}"
-                          class="${isSelectedForConnect ? 'bg-[#0078d4]/15' : 'hover:bg-[#2d2c2b]'} transition-colors cursor-context-menu"
-                          title="Clic derecho para Menú Contextual (Iniciar, Reiniciar, Detener, Eliminar)"
+                          class="${isSelectedForConnect ? 'bg-[#0078d4]/15' : ''} cursor-context-menu"
                         >
-                          <td class="py-2.5 px-4 font-semibold text-[#2899f5]">
-                            <button type="button" data-drill-vm="${escapeHtml(vm.name)}" data-drill-vm-rg="${escapeHtml(vm.resourceGroup)}" class="hover:underline cursor-pointer text-left">
-                              ${escapeHtml(vm.name)}
+                          <td>
+                            <button type="button" data-drill-vm="${escapeHtml(vm.name)}" data-drill-vm-rg="${escapeHtml(vm.resourceGroup)}" class="az-link inline-flex items-center gap-2 text-left">
+                              <svg class="w-4 h-4 shrink-0" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="9.5" rx="1" fill="#0078d4"/><rect x="3.2" y="4.2" width="11.6" height="7.1" fill="#50e6ff"/><path d="M6.5 15H11.5M9 12.5V15" stroke="#a19f9d" stroke-width="1.5" stroke-linecap="round"/></svg>
+                              <span>${escapeHtml(vm.name)}</span>
                             </button>
                           </td>
-                          <td class="py-2.5 px-4 font-medium ${isRunning ? 'text-[#6ccb5f]' : 'text-[#fce100]'}">${escapeHtml(displayStatus)}</td>
-                          <td class="py-2.5 px-4 text-[#2899f5] hover:underline cursor-pointer" data-drill-rg="${escapeHtml(vm.resourceGroup)}">${escapeHtml(vm.resourceGroup)}</td>
-                          <td class="py-2.5 px-4 font-mono text-[11px] text-[#50e6ff] cursor-pointer hover:underline" data-nav="networking-topology">
-                            ${escapeHtml(vnetLabel)} / <span class="text-[#fce100]">${escapeHtml(subnetLabel)}</span>
-                          </td>
-                          <td class="py-2.5 px-4 font-mono text-[11px] text-[#d2d0ce]">${escapeHtml(nsgLabel)}</td>
-                          <td class="py-2.5 px-4 font-mono text-[#d2d0ce]">${escapeHtml(image)}</td>
-                          <td class="py-2.5 px-4 font-mono text-[11px]">
-                            <span class="text-[#f3f2f1]">${escapeHtml(privateIp)}</span> · <span class="text-[#50e6ff]">${escapeHtml(publicIp)}</span>
-                          </td>
-                          <td class="py-2.5 px-4 font-mono text-[11px] text-[#6ccb5f]">${escapeHtml(vm.adminUsername || 'azureuser')}</td>
-                          <td class="py-2.5 px-4 text-right space-x-2">
+                          <td><span class="az-link" data-drill-rg="${escapeHtml(vm.resourceGroup)}">${escapeHtml(vm.resourceGroup)}</span></td>
+                          <td>${escapeHtml(azRegionName(vm.location))}</td>
+                          <td>${isRunning ? 'En ejecución' : 'Detenido (desasignado)'}</td>
+                          <td title="${escapeHtml(image)}">${osLabel}</td>
+                          <td>${escapeHtml(vm.size || vm.vmSize || 'Standard_B2s')}</td>
+                          <td>${escapeHtml(publicIp)}</td>
+                          <td><span class="az-link" data-nav="networking-topology">${escapeHtml(vnetLabel)}/${escapeHtml(subnetLabel)}</span></td>
+                          <td class="text-right space-x-3">
+                            <button type="button" data-connect-vm="${escapeHtml(vm.name)}" class="az-link">Conectar</button>
+                            <button type="button" data-toggle-vm="${escapeHtml(vm.name)}" class="az-link">${isRunning ? 'Detener' : 'Iniciar'}</button>
                             <button
                               type="button"
-                              data-connect-vm="${escapeHtml(vm.name)}"
-                              class="px-2 py-0.5 bg-[#0078d4] hover:bg-[#106ebe] text-white font-semibold text-[11px] cursor-pointer"
-                            >
-                              Conectar
-                            </button>
-                            <button data-toggle-vm="${escapeHtml(vm.name)}" class="text-[#2899f5] hover:underline text-[11px] cursor-pointer">
-                              ${isRunning ? 'Detener' : 'Iniciar'}
-                            </button>
-                            <button data-delete-vm="${escapeHtml(vm.name)}" class="text-[#f1707b] hover:underline text-[11px] cursor-pointer">
-                              Eliminar
-                            </button>
+                              data-delete-vm="${escapeHtml(vm.name)}"
+                              title="Eliminar"
+                              aria-label="Eliminar ${escapeHtml(vm.name)}"
+                              class="inline-flex w-6 h-6 items-center justify-center align-middle text-[#d2d0ce] hover:text-[#f1707b] hover:bg-[#323130] cursor-pointer [&>svg]:w-4 [&>svg]:h-4"
+                            >${AZ_CMD_ICONS.trash}</button>
                           </td>
                         </tr>
                       `;
@@ -6850,7 +7035,7 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
-                        <h2 class="text-[15px] font-semibold text-white">Conectar a máquina virtual: <span class="text-[#50e6ff] font-mono">${escapeHtml(targetVm.name)}</span></h2>
+                        <h2 class="text-[15px] font-semibold text-white">Conectar: ${escapeHtml(targetVm.name)}</h2>
                         <span class="px-2 py-0.5 text-[10px] font-mono bg-[#111111] border border-[#3b3a39] text-[#d2d0ce]">
                           VNet: ${escapeHtml(targetVnetName)} · IP Privada: ${escapeHtml(targetVm.privateIpAddress || targetVm.privateIp || '10.0.1.4')}
                         </span>
@@ -7398,51 +7583,26 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
 
         const renderAllResourcesRowsHTML = (unifiedRows) => {
           if (unifiedRows.length === 0) {
-            return `<tr><td colspan="6" class="py-8 px-4 text-center text-[#a19f9d]">No hay recursos que coincidan con el filtro actual.</td></tr>`;
+            return `<tr><td colspan="6" class="!py-10 text-center text-[#a19f9d]">No hay recursos que mostrar. Pruebe a cambiar o borrar los filtros.</td></tr>`;
           }
           return unifiedRows
             .map((item) => {
               const isVmItem = item.navTarget === 'virtual-machines';
+              const isRgItem = item.navTarget === 'resource-groups';
               const hasHiddenTitleTag = Boolean(item.hiddenTitle || item.isSystemHidden);
-
-              // Icono visual diferenciado: si tiene tag `hidden-title` se renderiza con el icono de Recurso de Sistema de Azure
-              const resourceIconSvg = hasHiddenTitleTag
-                ? `<svg class="w-4 h-4 shrink-0 text-[#fce100]" viewBox="0 0 16 16" fill="currentColor" title="Recurso de Sistema Autogenerado (tag: hidden-title)">
-                     <path d="M8 1l6 2.5v4.7c0 3.7-2.5 6.3-6 7.3-3.5-1-6-3.6-6-7.3V3.5L8 1zm0 2.2L4 4.8v3.4c0 2.6 1.7 4.5 4 5.4 2.3-.9 4-2.8 4-5.4V4.8L8 3.2zm0 2.3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm0 1.3a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
-                   </svg>`
-                : `<svg class="w-4 h-4 shrink-0 text-[#50e6ff]" viewBox="0 0 16 16" fill="currentColor">
-                     <rect x="2" y="2" width="5" height="5" fill="#50e6ff"/>
-                     <rect x="9" y="2" width="5" height="5" fill="#0078d4"/>
-                     <rect x="2" y="9" width="5" height="5" fill="#0078d4"/>
-                     <rect x="9" y="9" width="5" height="5" fill="#50e6ff"/>
-                   </svg>`;
-
-              const tagsBadgesHtml = hasHiddenTitleTag
-                ? `<div class="flex items-center gap-1.5 flex-wrap">
-                     <span class="px-1.5 py-0.5 text-[10px] font-mono bg-[#fce100]/15 border border-[#fce100]/50 text-[#fce100] rounded-sm" title="${escapeHtml(
-                       item.hiddenTitle || 'System Resource'
-                     )}">
-                       hidden-title: ${escapeHtml(
-                         (item.hiddenTitle || 'System Resource').slice(0, 32)
-                       )}${(item.hiddenTitle || '').length > 32 ? '…' : ''}
-                     </span>
-                     <span class="px-1.5 py-0.5 text-[10px] font-mono bg-[#323130] text-[#a19f9d] rounded-sm">
-                       SISTEMA
-                     </span>
-                   </div>`
-                : Object.keys(item.tags || {}).length > 0
-                ? `<div class="flex items-center gap-1 flex-wrap">
-                     ${Object.entries(item.tags)
-                       .slice(0, 2)
-                       .map(
-                         ([k, v]) =>
-                           `<span class="px-1.5 py-0.5 text-[10px] font-mono bg-[#0078d4]/15 border border-[#0078d4]/40 text-[#50e6ff] rounded-sm">${escapeHtml(
-                             k
-                           )}:${escapeHtml(String(v))}</span>`
-                       )
-                       .join('')}
-                   </div>`
-                : `<span class="text-[#a19f9d] text-[11px]">—</span>`;
+              const tagEntries = Object.entries(item.tags || {}).filter(([k]) => k !== 'hidden-title');
+              const tagsHtml =
+                tagEntries.length > 0
+                  ? tagEntries
+                      .slice(0, 2)
+                      .map(([k, v]) => `<span class="inline-block px-1.5 py-px mr-1 text-[12px] bg-[#323130] text-[#f3f2f1] rounded-sm">${escapeHtml(k)} : ${escapeHtml(String(v))}</span>`)
+                      .join('') + (tagEntries.length > 2 ? `<span class="text-[12px] text-[#a19f9d]">+${tagEntries.length - 2}</span>` : '')
+                  : '';
+              const linkAttrs = isVmItem
+                ? `data-drill-vm="${escapeHtml(item.name)}" data-drill-vm-rg="${escapeHtml(item.resourceGroup)}"`
+                : isRgItem
+                  ? `data-drill-rg="${escapeHtml(item.name)}"`
+                  : `data-nav="${escapeHtml(item.navTarget)}" data-recent-name="${escapeHtml(item.name)}" data-recent-rg="${escapeHtml(item.resourceGroup)}"`;
 
               return `
                 <tr
@@ -7451,34 +7611,20 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
                   data-resource-name="${escapeHtml(item.name)}"
                   data-resource-rg="${escapeHtml(item.resourceGroup)}"
                   data-resource-nav="${escapeHtml(item.navTarget)}"
-                  class="${
-                    hasHiddenTitleTag ? 'bg-[#1b1a19]/90' : ''
-                  } hover:bg-[#2d2c2b] transition-colors cursor-context-menu"
-                  title="${
-                    hasHiddenTitleTag
-                      ? `Recurso de Sistema Autogenerado · hidden-title: ${escapeHtml(
-                          item.hiddenTitle || ''
-                        )}`
-                      : 'Clic derecho para abrir el menú contextual de Azure'
-                  }"
+                  class="cursor-context-menu"
+                  ${hasHiddenTitleTag ? `title="${escapeHtml(item.hiddenTitle || 'Recurso creado por la plataforma')}"` : ''}
                 >
-                  <td class="py-2.5 px-4 font-semibold text-[#2899f5] hover:underline cursor-pointer" ${
-                    isVmItem
-                      ? `data-drill-vm="${escapeHtml(item.name)}" data-drill-vm-rg="${escapeHtml(item.resourceGroup)}"`
-                      : `data-nav="${item.navTarget}"`
-                  }>
-                    <div class="flex items-center gap-2">
-                      ${resourceIconSvg}
+                  <td>
+                    <button type="button" ${linkAttrs} class="az-link inline-flex items-center gap-2 text-left">
+                      ${azServiceIcon(item.navTarget, 'w-4 h-4')}
                       <span>${escapeHtml(item.name)}</span>
-                    </div>
+                    </button>
                   </td>
-                  <td class="py-2.5 px-4 text-[#f3f2f1]">${escapeHtml(item.type)}</td>
-                  <td class="py-2.5 px-4 text-[#2899f5] hover:underline cursor-pointer" data-drill-rg="${escapeHtml(
-                    item.resourceGroup
-                  )}">${escapeHtml(item.resourceGroup)}</td>
-                  <td class="py-2.5 px-4 font-mono text-[#50e6ff]">${escapeHtml(item.location)}</td>
-                  <td class="py-2.5 px-4">${tagsBadgesHtml}</td>
-                  <td class="py-2.5 px-4 text-[#6ccb5f]">${escapeHtml(item.status)}</td>
+                  <td>${escapeHtml(azTypeName(item.type))}</td>
+                  <td><span class="az-link" data-drill-rg="${escapeHtml(item.resourceGroup)}">${escapeHtml(item.resourceGroup)}</span></td>
+                  <td>${escapeHtml(azRegionName(item.location))}</td>
+                  <td><span class="az-link" data-nav="cost-management">${escapeHtml(window.azureState.subscription.name)}</span></td>
+                  <td>${tagsHtml}</td>
                 </tr>
               `;
             })
@@ -7501,111 +7647,80 @@ Last login: ${escapeHtml(nowUtc)} from 10.0.250.4 (AzureBastionSubnet)</div>
 
           return `
             <div class="space-y-4 pb-8">
-              <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[#3b3a39] pb-3">
-                <div class="flex items-center gap-3">
-                  <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
-                    <rect x="2" y="2" width="6" height="6" fill="#50e6ff"/>
-                    <rect x="10" y="2" width="6" height="6" fill="#0078d4"/>
-                    <rect x="2" y="10" width="6" height="6" fill="#0078d4"/>
-                    <rect x="10" y="10" width="6" height="6" fill="#50e6ff"/>
-                  </svg>
-                  <div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                      <h1 class="text-[20px] font-semibold text-white leading-tight">Todos los recursos</h1>
-                      <span
-                        id="all-resources-total-badge"
-                        class="px-2 py-0.5 text-[11px] font-mono bg-[#0078d4]/25 border border-[#0078d4] text-[#50e6ff]"
-                      >
-                        ${unifiedRows.length} visibles
-                      </span>
-                      <span
-                        class="px-2 py-0.5 text-[11px] font-mono bg-[#252423] border border-[#3b3a39] text-[#fce100]"
-                        title="Recursos autogenerados por Azure Fabric con etiqueta hidden-title (NetworkWatcherRG, NetworkWatcher_westeurope, Default-ActivityLogAlerts, etc.)"
-                      >
-                        +${hiddenSystemCount} recursos de sistema (${showHiddenSystemResources ? 'Mostrados' : 'Ocultos'})
-                      </span>
-                    </div>
-                    <p class="text-[11px] text-[#a19f9d]">Recursos de todos los grupos de la suscripción<span id="state-bus-last-key" class="hidden text-[#fce100] font-mono">${escapeHtml(lastEvt.key)}</span></p>
-                  </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-7 h-7 shrink-0" viewBox="0 0 18 18" fill="none">
+                  <rect x="2" y="2" width="6" height="6" fill="#50e6ff"/>
+                  <rect x="10" y="2" width="6" height="6" fill="#0078d4"/>
+                  <rect x="2" y="10" width="6" height="6" fill="#0078d4"/>
+                  <rect x="10" y="10" width="6" height="6" fill="#50e6ff"/>
+                </svg>
+                <div>
+                  <h1 class="text-[20px] font-semibold text-white leading-tight">Todos los recursos</h1>
+                  <p class="text-[11px] text-[#a19f9d]">Directorio</p>
                 </div>
-                <div class="flex flex-wrap items-center gap-2">
-                  <button
-                    data-action="open-create-vm"
-                    class="px-3.5 py-1.5 bg-[#0078d4] hover:bg-[#106ebe] text-white text-[12px] font-semibold cursor-pointer"
-                  >
-                    + Crear
-                  </button>
-                </div>
+                <span id="all-resources-total-badge" class="hidden"></span>
+                <span id="state-bus-last-key" class="hidden text-[#fce100] font-mono">${escapeHtml(lastEvt.key)}</span>
               </div>
 
-              <!-- Barra de Filtros de Azure Portal ("Mostrar tipos ocultos / Mostrar recursos ocultos") -->
-              <div class="bg-[#252423] border border-[#3b3a39] p-3 rounded-sm flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-                <div class="flex flex-wrap items-center gap-3 flex-1">
-                  <!-- Buscador por nombre o etiqueta -->
-                  <div class="relative flex-1 min-w-[220px] max-w-md">
-                    <input
-                      id="all-resources-search-input"
-                      type="text"
-                      value="${escapeHtml(allResourcesSearchQuery)}"
-                      placeholder="Filtrar por nombre, tipo o etiqueta (ej. NetworkWatcher, hidden-title)..."
-                      class="w-full bg-[#1b1a19] border border-[#3b3a39] focus:border-[#0078d4] focus:outline-none px-3 py-1.5 text-xs text-white rounded-sm"
-                    />
-                  </div>
-
-                  <!-- Selector por Grupo de Recursos -->
-                  <div class="flex items-center gap-2">
-                    <label for="all-resources-rg-select" class="text-xs text-[#a19f9d]">Grupo de recursos:</label>
-                    <select
-                      id="all-resources-rg-select"
-                      class="bg-[#1b1a19] border border-[#3b3a39] text-xs text-white px-2.5 py-1.5 rounded-sm focus:outline-none focus:border-[#0078d4]"
-                    >
-                      <option value="ALL" ${allResourcesResourceGroupFilter === 'ALL' ? 'selected' : ''}>Todos</option>
-                      ${allRgs
-                        .map(
-                          (g) =>
-                            `<option value="${escapeHtml(g.name)}" ${
-                              allResourcesResourceGroupFilter === g.name ? 'selected' : ''
-                            }>${escapeHtml(g.name)}${g.isHiddenSystemResource ? ' (Sistema)' : ''}</option>`
-                        )
-                        .join('')}
-                    </select>
-                  </div>
-                </div>
-
-                <!-- Casilla de verificación clásica de Azure: "Mostrar recursos ocultos" -->
-                <div class="flex items-center gap-3 pt-2 lg:pt-0 border-t lg:border-t-0 border-[#3b3a39]">
-                  <label
-                    for="chk-show-hidden-system-resources"
-                    class="flex items-center gap-2 text-xs text-[#f3f2f1] cursor-pointer select-none bg-[#1b1a19] hover:bg-[#323130] border border-[#3b3a39] px-3 py-1.5 rounded-sm transition-colors"
-                    title="Muestra u oculta recursos autogenerados por Azure con la etiqueta de sistema hidden-title (NetworkWatcherRG, NetworkWatcher_westeurope, Default-ActivityLogAlerts, etc.)"
-                  >
-                    <input
-                      id="chk-show-hidden-system-resources"
-                      type="checkbox"
-                      ${showHiddenSystemResources ? 'checked' : ''}
-                      class="w-3.5 h-3.5 accent-[#0078d4] cursor-pointer"
-                    />
-                    <span class="font-semibold">Mostrar recursos ocultos</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 bg-[#fce100]/15 text-[#fce100] border border-[#fce100]/40 rounded-sm">
-                      tag: hidden-title
-                    </span>
-                  </label>
-                </div>
+              <div class="az-cmdbar">
+                ${azCmdButton('add', 'Crear', 'data-nav="create-resource-marketplace"')}
+                ${AZ_CMD_SEP}
+                ${azCmdButton('refresh', 'Actualizar', 'data-action="refresh-view"')}
+                ${azCmdButton('download', 'Exportar a CSV', 'data-az-export-csv="todos-los-recursos"')}
               </div>
 
-              <div class="w-full max-w-full bg-[#252423] border border-[#3b3a39] overflow-x-auto overscroll-x-contain">
-                <table class="w-full min-w-[920px] text-left border-collapse text-[12px] tabular-nums whitespace-nowrap">
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  id="all-resources-search-input"
+                  type="text"
+                  value="${escapeHtml(allResourcesSearchQuery)}"
+                  placeholder="Filtrar por cualquier campo..."
+                  class="w-64 h-7 bg-[#1b1a19] text-[13px] text-white placeholder-[#a19f9d] px-2.5 border border-[#605e5c] focus:border-[#0078d4] focus:outline-none select-text"
+                />
+                <span class="az-pill">Suscripción es igual a <b>todo</b></span>
+                <label class="az-pill gap-1">
+                  <span>Grupo de recursos es igual a</span>
+                  <select id="all-resources-rg-select" class="bg-transparent text-[12px] font-semibold text-white focus:outline-none cursor-pointer">
+                    <option class="bg-[#252423]" value="ALL" ${allResourcesResourceGroupFilter === 'ALL' ? 'selected' : ''}>todo</option>
+                    ${allRgs
+                      .map(
+                        (g) =>
+                          `<option class="bg-[#252423]" value="${escapeHtml(g.name)}" ${
+                            allResourcesResourceGroupFilter === g.name ? 'selected' : ''
+                          }>${escapeHtml(g.name)}</option>`
+                      )
+                      .join('')}
+                  </select>
+                </label>
+                <span class="az-pill">Tipo es igual a <b>todo</b></span>
+                <span class="az-pill">Ubicación es igual a <b>todo</b></span>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-3 text-[12px] text-[#d2d0ce]">
+                <span class="tabular-nums">${unifiedRows.length === 0 ? 'No hay registros que mostrar.' : `Mostrando 1 a ${unifiedRows.length} de ${unifiedRows.length} registros.`}</span>
+                <label for="chk-show-hidden-system-resources" class="flex items-center gap-2 cursor-pointer select-none" title="Incluye los recursos que la plataforma crea automáticamente (${hiddenSystemCount})">
+                  <input
+                    id="chk-show-hidden-system-resources"
+                    type="checkbox"
+                    ${showHiddenSystemResources ? 'checked' : ''}
+                    class="w-3.5 h-3.5 accent-[#0078d4] cursor-pointer"
+                  />
+                  <span>Mostrar tipos ocultos</span>
+                </label>
+              </div>
+
+              <div class="w-full max-w-full overflow-x-auto overscroll-x-contain">
+                <table class="az-list w-full min-w-[920px] border-collapse tabular-nums">
                   <thead>
-                    <tr class="border-b border-[#3b3a39] text-[#a19f9d] font-semibold bg-[#1b1a19]">
-                      <th class="py-2.5 px-4">Nombre</th>
-                      <th class="py-2.5 px-4">Tipo</th>
-                      <th class="py-2.5 px-4">Grupo de recursos</th>
-                      <th class="py-2.5 px-4">Ubicación</th>
-                      <th class="py-2.5 px-4">Etiquetas (Tags / Sistema)</th>
-                      <th class="py-2.5 px-4">Estado / Detalles</th>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Tipo</th>
+                      <th>Grupo de recursos</th>
+                      <th>Ubicación</th>
+                      <th>Suscripción</th>
+                      <th>Etiquetas</th>
                     </tr>
                   </thead>
-                  <tbody id="all-resources-table-body" class="divide-y divide-[#3b3a39]">
+                  <tbody id="all-resources-table-body">
                     ${renderAllResourcesRowsHTML(unifiedRows)}
                   </tbody>
                 </table>
@@ -38168,6 +38283,31 @@ return {
           true
         );
 
+        // ---- Exportar a CSV: descarga la lista que se está viendo ----
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-az-export-csv]');
+          if (!btn) return;
+          const table = document.querySelector('#workspace-content table.az-list');
+          if (!table) return;
+          const quote = (text) => `"${String(text).replace(/\s+/g, ' ').trim().replace(/"/g, '""')}"`;
+          const lines = Array.from(table.querySelectorAll('tr'))
+            .map((tr) =>
+              Array.from(tr.children)
+                .filter((cell) => !cell.querySelector('[data-delete-rg], [data-delete-vm], [data-connect-vm]') && cell.textContent.trim() !== '')
+                .map((cell) => quote(cell.textContent))
+                .join(',')
+            )
+            .filter(Boolean);
+          const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = `${btn.getAttribute('data-az-export-csv') || 'recursos'}.csv`;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          setTimeout(() => URL.revokeObjectURL(link.href), 2000);
+        });
+
         // ---- Filtro de «Todos los servicios» ----
         document.addEventListener('input', (e) => {
           if (e.target.id !== 'all-services-filter') return;
@@ -38198,6 +38338,99 @@ return {
             $('global-search-input')?.focus();
           }
         });
+
+        // ---- Acabado de las hojas tras cada render: subtítulo con el directorio, sin insignias ni emojis, estados en español ----
+        const workspaceEl = $('workspace-content');
+        const NO_DIRECTORY_SUBTITLE = new Set(['home', 'all-services', 'create-vm-wizard', 'create-resource-marketplace', 'template-deployment', 'aks-service']);
+        const STATUS_TEXT = {
+          'Corriendo (Running)': 'En ejecución',
+          Corriendo: 'En ejecución',
+          Running: 'En ejecución',
+          '● Running': 'En ejecución',
+          Detenida: 'Detenido (desasignado)',
+          'Detenida (Stopped)': 'Detenido (desasignado)',
+          Stopped: 'Detenido',
+          Succeeded: 'Correcto',
+          Failed: 'Con errores',
+          Online: 'En línea'
+        };
+        const KEEP_PICTOS = new Set(['✅', '❌', '⚠', '▶', '⬆', '⬇', '✔', '✖', '⏸', '⏹', '↔', '↕', '©', '®', '™', '‼', '⏱']);
+        const PICTO_RE = /(\p{Extended_Pictographic})️?(?:‍\p{Extended_Pictographic}️?)*\s?/gu;
+        const CODE_ZONE = 'pre, code, textarea, script, style, .bg-black, [class*="bg-[#000000]"], [class*="bg-[#0d1117]"], [class*="bg-[#090909]"], [class*="bg-[#0c0c0c]"], [class*="bg-[#0a0a0a]"], [class*="bg-[#090d11]"]';
+        const currentViewId = () => {
+          const hist = window.navigationHistory || [];
+          return (hist[hist.length - 1] || {}).view || 'home';
+        };
+        const directoryLabel = () =>
+          ($('settings-current-tenant-label')?.textContent || $('topbar-tenant-badge')?.textContent || '').trim();
+
+        const polishBlade = () => {
+          if (!workspaceEl) return;
+          const view = currentViewId();
+
+          // 1. Cabecera: fuera insignias junto al título y subtítulo con el directorio, como en las listas del portal
+          const h1 = workspaceEl.querySelector('h1');
+          if (h1 && view !== 'aks-service') {
+            Array.from(h1.parentElement.children).forEach((sib) => {
+              if (sib !== h1 && /^(SPAN|CODE)$/.test(sib.tagName)) sib.classList.add('az-hidden-chip');
+            });
+          }
+          if (h1 && !NO_DIRECTORY_SUBTITLE.has(view)) {
+            let sub = h1.nextElementSibling;
+            if (!sub || sub.tagName !== 'P') sub = h1.parentElement.nextElementSibling;
+            if (sub && sub.tagName === 'P' && !sub.classList.contains('az-blade-sub')) {
+              const dir = directoryLabel();
+              if (dir) {
+                sub.textContent = dir;
+                sub.classList.add('az-blade-sub');
+              }
+            }
+          }
+
+          // 2. Textos: sin emojis decorativos y con los estados que usa el portal en español
+          const walker = document.createTreeWalker(workspaceEl, NodeFilter.SHOW_TEXT);
+          const edits = [];
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            const raw = node.nodeValue;
+            if (!raw || !raw.trim()) continue;
+            const parent = node.parentElement;
+            if (!parent || parent.closest(CODE_ZONE)) continue;
+            let next = raw;
+            const trimmed = raw.trim();
+            // Los títulos de sección del portal no van numerados
+            if (/^H[2-4]$/.test(parent.tagName) || /^H[2-4]$/.test(parent.parentElement?.tagName || '')) {
+              next = next.replace(/^(\s*)\d+\.\s+/, '$1');
+            }
+            if (Object.prototype.hasOwnProperty.call(STATUS_TEXT, trimmed)) {
+              next = next.replace(trimmed, STATUS_TEXT[trimmed]);
+            }
+            else if (parent.tagName === 'TD' && window.AZ_REGION_NAMES && Object.prototype.hasOwnProperty.call(window.AZ_REGION_NAMES, trimmed)) {
+              next = next.replace(trimmed, window.AZ_REGION_NAMES[trimmed]);
+            }
+            if (/\p{Extended_Pictographic}/u.test(next)) {
+              next = next.replace(PICTO_RE, (match, first) => (KEEP_PICTOS.has(first) ? match : ''));
+            }
+            if (next !== raw) edits.push([node, next]);
+          }
+          edits.forEach(([node, next]) => {
+            node.nodeValue = next;
+          });
+        };
+
+        if (workspaceEl) {
+          let polishQueued = false;
+          const queuePolish = () => {
+            if (polishQueued) return;
+            polishQueued = true;
+            requestAnimationFrame(() => {
+              polishQueued = false;
+              polishBlade();
+            });
+          };
+          new MutationObserver(queuePolish).observe(workspaceEl, { childList: true, subtree: true });
+          queuePolish();
+        }
 
         // ---- Panel de laboratorios guiados: plegado por defecto, se puede cerrar y reabrir desde Ayuda ----
         const LAB_PANEL_KEY = 'azurePortalLabPanel'; // 'open' | 'collapsed' | 'hidden'
